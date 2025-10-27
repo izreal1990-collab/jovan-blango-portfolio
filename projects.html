@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Jovan Blango's projects - Columbus, OH electrician bridging electrical expertise with technology innovation">
+    <meta name="description" content="Detailed portfolio of Jovan Blango's projects bridging electrical expertise with technology">
     <title>Projects | Jovan Blango</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,135 +129,6 @@
             font-family: var(--font-mono);
         }
         
-        .project-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .search-wrapper {
-            position: relative;
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray);
-            pointer-events: none;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--light);
-            font-family: var(--font-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
-        }
-        
-        .search-input::placeholder {
-            color: var(--gray);
-        }
-        
-        .filter-dropdown {
-            position: relative;
-        }
-        
-        .filter-dropdown-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--light);
-            font-family: var(--font-primary);
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .filter-dropdown-btn:hover {
-            border-color: var(--primary);
-            background: rgba(0, 212, 255, 0.05);
-        }
-        
-        .filter-dropdown-btn svg {
-            transition: transform 0.3s ease;
-        }
-        
-        .filter-dropdown-btn.active svg {
-            transform: rotate(180deg);
-        }
-        
-        .filter-dropdown-menu {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            right: 0;
-            min-width: 200px;
-            padding: 0.75rem;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-        
-        .filter-dropdown-menu.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .filter-option {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background 0.2s ease;
-        }
-        
-        .filter-option:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .filter-option input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--primary);
-            cursor: pointer;
-        }
-        
-        .filter-option span {
-            color: var(--light);
-            font-size: 0.875rem;
-        }
-        
         .challenge-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -297,29 +168,6 @@
             .project-header {
                 flex-direction: column;
             }
-            
-            .project-controls {
-                flex-direction: column;
-            }
-            
-            .search-wrapper {
-                min-width: 100%;
-            }
-            
-            .filter-dropdown {
-                width: 100%;
-            }
-            
-            .filter-dropdown-btn {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .filter-dropdown-menu {
-                left: 0;
-                right: 0;
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -357,52 +205,6 @@
                 <p class="section-subtitle">Deep dives into the work that bridges electrical mastery and technological innovation</p>
             </div>
 
-            <!-- Search and Filter Controls -->
-            <div class="project-controls">
-                <div class="search-wrapper">
-                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                    <input type="text" id="projectSearch" class="search-input" placeholder="Search projects by name, tech, or description...">
-                </div>
-                
-                <div class="filter-dropdown">
-                    <button class="filter-dropdown-btn" id="techFilterBtn">
-                        <span>Filter by Tech</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="filter-dropdown-menu" id="techFilterMenu">
-                        <label class="filter-option">
-                            <input type="checkbox" value="Python" checked>
-                            <span>Python</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Raspberry Pi" checked>
-                            <span>Raspberry Pi</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Arduino" checked>
-                            <span>Arduino</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Solar" checked>
-                            <span>Solar PV</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="Automation" checked>
-                            <span>Automation</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" value="AI" checked>
-                            <span>AI/ML</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
             <!-- Filter Buttons -->
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -416,17 +218,16 @@
             <div class="project-detail-card" data-category="electrical hybrid">
                 <div class="project-header">
                     <div>
-                        <h2 class="project-title">Solar-Powered Workshop</h2>
+                        <h2 class="project-title">Off-Grid Solar-Powered Workshop</h2>
                         <p style="color: var(--gray-light); font-style: italic;">2020 - 2021</p>
                     </div>
                     <span class="project-category">Electrical + IoT</span>
                 </div>
                 
                 <p class="project-description">
-                    Designed and built a fully functional workshop powered by solar energy, integrating smart lighting and automation. 
-                    This completely self-sufficient electrical workshop demonstrates mastery of renewable energy systems, electrical engineering, 
-                    and IoT integration. The project showcases the practical application of solar technology, battery storage systems, and 
-                    intelligent monitoring—proving that off-grid operations are not only possible but economically viable.
+                    Designed and constructed a completely self-sufficient electrical workshop demonstrating mastery of renewable energy systems, 
+                    electrical engineering, and IoT integration. This project showcases the practical application of solar technology, battery 
+                    storage systems, and intelligent monitoring—proving that off-grid living is not only possible but economically viable.
                 </p>
                 
                 <div class="project-details">
@@ -447,22 +248,6 @@
                         <div class="detail-value">$0</div>
                     </div>
                 </div>
-
-                <!-- Image Placeholder: Add workshop photos here -->
-                <div class="project-images" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                        📷
-                    </div>
-                    <div style="background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); border-radius: 12px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                        📷
-                    </div>
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; height: 150px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                        📷
-                    </div>
-                </div>
-                <p style="color: var(--gray); font-size: 0.875rem; font-style: italic; margin-bottom: 1.5rem;">
-                    💡 Tip: Replace the placeholders above with actual workshop photos in an images/ folder
-                </p>
                 
                 <div class="tech-stack">
                     <span class="tech-badge">Solar PV Arrays</span>
@@ -503,17 +288,16 @@
             <div class="project-detail-card" data-category="iot software hybrid">
                 <div class="project-header">
                     <div>
-                        <h2 class="project-title">Modular Home Automation System</h2>
+                        <h2 class="project-title">Intelligent Home Automation Platform</h2>
                         <p style="color: var(--gray-light); font-style: italic;">2018 - Present</p>
                     </div>
                     <span class="project-category">IoT & Software</span>
                 </div>
                 
                 <p class="project-description">
-                    Created a Raspberry Pi–based system to control lighting, temperature, and security remotely. This comprehensive smart home 
-                    ecosystem was architected and deployed from scratch using custom Python applications. The system demonstrates full local control 
-                    without subscription services, integrating disparate IoT protocols into a unified, intelligent platform that learns from usage 
-                    patterns and optimizes for energy efficiency.
+                    Architected and deployed a comprehensive smart home ecosystem from scratch using Raspberry Pi and custom Python applications. 
+                    This system demonstrates full local control without subscription services, integrating disparate IoT protocols into a unified, 
+                    intelligent platform that learns from usage patterns and optimizes for energy efficiency.
                 </p>
                 
                 <div class="project-details">
@@ -700,7 +484,6 @@
                 <div class="footer-brand">
                     <h3>JOVAN BLANGO</h3>
                     <p>Electrician • Systems Thinker • Neurodivergent Innovator</p>
-                    <p style="margin-top: 0.5rem; color: var(--gray); font-size: 0.875rem;">📍 Columbus, OH</p>
                 </div>
                 <div class="footer-quote">
                     <p>"This is a living portfolio. It evolves as I do."</p>
@@ -726,114 +509,27 @@
         // Project filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-detail-card');
-        const searchInput = document.getElementById('projectSearch');
-        const techFilterBtn = document.getElementById('techFilterBtn');
-        const techFilterMenu = document.getElementById('techFilterMenu');
-        const techCheckboxes = techFilterMenu.querySelectorAll('input[type="checkbox"]');
         
-        // Toggle tech filter dropdown
-        techFilterBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            techFilterBtn.classList.toggle('active');
-            techFilterMenu.classList.toggle('active');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!techFilterMenu.contains(e.target) && !techFilterBtn.contains(e.target)) {
-                techFilterBtn.classList.remove('active');
-                techFilterMenu.classList.remove('active');
-            }
-        });
-        
-        // Advanced filtering function
-        function filterProjects() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-            const selectedTechs = Array.from(techCheckboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value.toLowerCase());
-            
-            projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
-                const cardText = card.textContent.toLowerCase();
-                const techBadges = Array.from(card.querySelectorAll('.tech-badge'))
-                    .map(badge => badge.textContent.toLowerCase());
-                
-                // Check category filter
-                const categoryMatch = activeCategory === 'all' || categories.includes(activeCategory);
-                
-                // Check search term
-                const searchMatch = searchTerm === '' || cardText.includes(searchTerm);
-                
-                // Check tech filter (at least one selected tech must match)
-                const techMatch = selectedTechs.length === 0 || selectedTechs.some(tech => 
-                    techBadges.some(badge => badge.includes(tech.toLowerCase()))
-                );
-                
-                // Show/hide card based on all filters
-                if (categoryMatch && searchMatch && techMatch) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Update results count
-            updateResultsCount();
-        }
-        
-        function updateResultsCount() {
-            const visibleCards = Array.from(projectCards).filter(card => 
-                card.style.display !== 'none'
-            ).length;
-            
-            const subtitle = document.querySelector('.section-subtitle');
-            if (visibleCards === 0) {
-                subtitle.textContent = 'No projects found matching your criteria';
-            } else if (visibleCards === projectCards.length) {
-                subtitle.textContent = 'Deep dives into the work that bridges electrical mastery and technological innovation';
-            } else {
-                subtitle.textContent = `Showing ${visibleCards} of ${projectCards.length} projects`;
-            }
-        }
-        
-        // Category filter buttons
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                filterProjects();
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
-        
-        // Search input
-        searchInput.addEventListener('input', filterProjects);
-        
-        // Tech checkboxes
-        techCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterProjects);
-        });
-        
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            // Ctrl/Cmd + K to focus search
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                searchInput.focus();
-            }
-            
-            // Escape to clear search
-            if (e.key === 'Escape' && searchInput === document.activeElement) {
-                searchInput.value = '';
-                filterProjects();
-                searchInput.blur();
-            }
-        });
-        
-        // Initialize
-        updateResultsCount();
     </script>
 </body>
 </html>
