@@ -126,8 +126,8 @@ Then open `http://localhost:8000` in your browser.
 <!-- Update these placeholders -->
 📧 [Your Email]        → your.email@example.com
 📱 [Your Phone]        → (123) 456-7890
-💼 [LinkedIn Profile]  → https://linkedin.com/in/yourprofile
-🔧 [GitHub/Portfolio]  → https://github.com/yourusername
+💼 [LinkedIn Profile]  → https://www.linkedin.com/in/jovan-blango-ab670991
+🔧 [GitHub/Portfolio]  → https://github.com/izreal1990-collab
 ```
 
 **Email Link** (Contact section)
