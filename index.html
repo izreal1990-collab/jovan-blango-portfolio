@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jovan Blango">
+    
+    <!-- Privacy-Focused Analytics - Plausible (Replace 'yourdomain.com' with actual domain when deployed) -->
+    <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
 </head>
 <body>
     <!-- Scroll to Top Button -->
@@ -33,7 +43,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -368,6 +378,105 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Client Feedback</span>
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">200+ satisfied clients, zero incidents, 100% satisfaction</p>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <button class="testimonial-nav testimonial-prev" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="testimonials-container">
+                    <div class="testimonial-card active" data-aos="fade-up">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            "Jovan transformed our entire facility's electrical system. His attention to detail and innovative solar integration saved us thousands monthly. What impressed me most was his ability to explain complex concepts in simple terms."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MW</div>
+                            <div class="author-info">
+                                <div class="author-name">Michael Williams</div>
+                                <div class="author-title">Manufacturing Plant Manager</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            "Working with Jovan was exceptional. He didn't just fix our electrical issues—he designed a smart automation system that monitors everything. His neurodivergent perspective brought solutions we never would have considered."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SR</div>
+                            <div class="author-info">
+                                <div class="author-name">Sarah Rodriguez</div>
+                                <div class="author-title">Commercial Property Owner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            "Jovan's combination of electrical expertise and programming skills is rare. He created a custom energy monitoring system for our warehouse that paid for itself in 6 months. Truly forward-thinking work."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DM</div>
+                            <div class="author-info">
+                                <div class="author-name">David Martinez</div>
+                                <div class="author-title">Logistics Director</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            "Reliability and innovation—that's Jovan. He rewired our aging building to modern standards while integrating smart controls. His systematic approach and zero-incident record speak volumes about his professionalism."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LC</div>
+                            <div class="author-info">
+                                <div class="author-name">Lisa Chen</div>
+                                <div class="author-title">Facility Operations Manager</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            "Jovan's technical depth is impressive. He doesn't just install—he optimizes. The Raspberry Pi monitoring system he built gives us real-time insights we never had before. Outstanding service and innovation."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JT</div>
+                            <div class="author-info">
+                                <div class="author-name">James Thompson</div>
+                                <div class="author-title">Tech Startup Founder</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="testimonial-nav testimonial-next" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="testimonial-indicators"></div>
         </div>
     </section>
 

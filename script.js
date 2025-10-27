@@ -129,6 +129,150 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Testimonials Carousel
+class TestimonialsCarousel {
+    constructor() {
+        this.container = document.querySelector('.testimonials-container');
+        if (!this.container) return;
+
+        this.cards = Array.from(document.querySelectorAll('.testimonial-card'));
+        this.prevBtn = document.querySelector('.testimonial-prev');
+        this.nextBtn = document.querySelector('.testimonial-next');
+        this.indicatorsContainer = document.querySelector('.testimonial-indicators');
+        
+        this.currentIndex = 0;
+        this.isTransitioning = false;
+        this.autoPlayInterval = null;
+
+        this.init();
+    }
+
+    init() {
+        this.createIndicators();
+        this.attachEventListeners();
+        this.startAutoPlay();
+        this.updateCarousel();
+    }
+
+    createIndicators() {
+        this.cards.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('testimonial-indicator');
+            if (index === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => this.goToSlide(index));
+            this.indicatorsContainer.appendChild(indicator);
+        });
+        this.indicators = Array.from(this.indicatorsContainer.querySelectorAll('.testimonial-indicator'));
+    }
+
+    attachEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+
+        // Pause autoplay on hover
+        this.container.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prev();
+            if (e.key === 'ArrowRight') this.next();
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        this.container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        this.container.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe(touchStartX, touchEndX);
+        });
+    }
+
+    handleSwipe(startX, endX) {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                this.next();
+            } else {
+                this.prev();
+            }
+        }
+    }
+
+    updateCarousel() {
+        this.cards.forEach((card, index) => {
+            card.classList.remove('active', 'prev');
+            if (index === this.currentIndex) {
+                card.classList.add('active');
+            } else if (index < this.currentIndex) {
+                card.classList.add('prev');
+            }
+        });
+
+        this.indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.currentIndex);
+        });
+    }
+
+    next() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+        
+        this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 500);
+    }
+
+    prev() {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
+        
+        this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 500);
+    }
+
+    goToSlide(index) {
+        if (this.isTransitioning || index === this.currentIndex) return;
+        this.isTransitioning = true;
+        
+        this.currentIndex = index;
+        this.updateCarousel();
+        
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 500);
+    }
+
+    startAutoPlay() {
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => this.next(), 5000);
+    }
+
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+}
+
+// Initialize testimonials carousel
+const testimonials = new TestimonialsCarousel();
+
 // Parallax effect for hero orbs
 document.addEventListener('mousemove', (e) => {
     const orbs = document.querySelectorAll('.gradient-orb');
@@ -455,3 +599,169 @@ window.addEventListener('beforeunload', () => {
         clickedLinks: engagementData.clickedLinks
     });
 });
+
+// Progressive Web App - Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+                console.log('✅ Service Worker registered successfully:', registration.scope);
+                
+                // Check for updates periodically
+                setInterval(() => {
+                    registration.update();
+                }, 60000); // Check every minute
+                
+                // Handle service worker updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // New service worker available, show update notification
+                            showUpdateNotification();
+                        }
+                    });
+                });
+            })
+            .catch((error) => {
+                console.log('❌ Service Worker registration failed:', error);
+            });
+    });
+    
+    // Show update notification when new version is available
+    function showUpdateNotification() {
+        const notification = document.createElement('div');
+        notification.innerHTML = `
+            <div style="
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: rgba(10, 14, 39, 0.95);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(0, 212, 255, 0.3);
+                border-radius: 12px;
+                padding: 1rem 1.5rem;
+                color: white;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                animation: slideIn 0.3s ease;
+            ">
+                <span>🎉 New version available!</span>
+                <button onclick="window.location.reload()" style="
+                    padding: 0.5rem 1rem;
+                    background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+                    border: none;
+                    border-radius: 6px;
+                    color: white;
+                    font-weight: 600;
+                    cursor: pointer;
+                ">
+                    Update Now
+                </button>
+                <button onclick="this.parentElement.parentElement.remove()" style="
+                    padding: 0.5rem;
+                    background: transparent;
+                    border: none;
+                    color: rgba(255, 255, 255, 0.5);
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                ">
+                    ✕
+                </button>
+            </div>
+        `;
+        document.body.appendChild(notification);
+    }
+}
+
+// PWA Install Prompt
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Stash the event so it can be triggered later
+    deferredPrompt = e;
+    // Show install button
+    showInstallButton();
+});
+
+function showInstallButton() {
+    const installBtn = document.createElement('button');
+    installBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Install App
+    `;
+    installBtn.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-weight: 600;
+        font-size: 0.875rem;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s ease;
+        animation: slideIn 0.5s ease;
+    `;
+    
+    installBtn.addEventListener('mouseenter', () => {
+        installBtn.style.transform = 'scale(1.05)';
+    });
+    
+    installBtn.addEventListener('mouseleave', () => {
+        installBtn.style.transform = 'scale(1)';
+    });
+    
+    installBtn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        
+        // Show the install prompt
+        deferredPrompt.prompt();
+        
+        // Wait for the user's response
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        console.log(`User response to install prompt: ${outcome}`);
+        
+        // Clear the deferred prompt
+        deferredPrompt = null;
+        
+        // Remove the install button
+        installBtn.remove();
+    });
+    
+    document.body.appendChild(installBtn);
+}
+
+// Track PWA installation
+window.addEventListener('appinstalled', () => {
+    console.log('✅ PWA installed successfully');
+    
+    // Track with analytics if available
+    if (window.plausible) {
+        window.plausible('PWA Install');
+    }
+});
+
+// Check if running as PWA
+if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+    console.log('✅ Running as PWA');
+    document.body.classList.add('pwa-mode');
+}
