@@ -24,6 +24,16 @@
     <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-text">JOVAN BLANGO</div>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -192,7 +202,7 @@
                     <div class="highlight-card">
                         <div class="highlight-icon">⚡</div>
                         <h4>Zero-Incident Safety</h4>
-                        <p>15+ years, 2,000+ projects, zero safety violations. Safety isn't compliance—it's systems thinking applied to human factors.</p>
+                        <p>12+ years, 2,000+ projects, zero safety violations. Safety isn't compliance—it's systems thinking applied to human factors.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-icon">🔧</div>
@@ -282,10 +292,15 @@
                         <div class="project-overlay">
                             <span class="project-tag">Electrical + IoT</span>
                         </div>
+                        <!-- Image placeholder: Add your workshop photo here -->
+                        <!-- <img src="images/solar-workshop.jpg" alt="Solar-Powered Workshop"> -->
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; min-height: 250px; color: white; font-size: 3rem;">
+                            ⚡🔆
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Off-Grid Solar Workshop</h3>
-                        <p>Fully self-sufficient electrical workshop with 6kW solar array, 15kWh battery storage, automatic grid failover, and custom Raspberry Pi monitoring dashboard.</p>
+                        <h3>Solar-Powered Workshop</h3>
+                        <p>Designed and built a fully functional workshop powered by solar energy, integrating smart lighting and automation. Features 6kW solar array, 15kWh battery storage, automatic grid failover, and custom Raspberry Pi monitoring dashboard for complete energy independence.</p>
                         <div class="project-tech">
                             <span>Solar PV</span>
                             <span>Battery Storage</span>
@@ -310,10 +325,15 @@
                         <div class="project-overlay">
                             <span class="project-tag">Home Automation</span>
                         </div>
+                        <!-- Image placeholder: Add your home automation system photo here -->
+                        <!-- <img src="images/home-automation.jpg" alt="Modular Home Automation System"> -->
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; min-height: 250px; color: white; font-size: 3rem;">
+                            🏠💡
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Smart Home Automation Platform</h3>
-                        <p>Custom Raspberry Pi-based ecosystem controlling 30+ devices (lighting, climate, security) with zero subscription fees and full local control.</p>
+                        <h3>Modular Home Automation System</h3>
+                        <p>Created a Raspberry Pi–based system to control lighting, temperature, and security remotely. Custom ecosystem controlling 30+ devices with zero subscription fees and full local control, achieving 40% energy reduction.</p>
                         <div class="project-tech">
                             <span>Raspberry Pi</span>
                             <span>Python</span>
@@ -337,6 +357,11 @@
                     <div class="project-image">
                         <div class="project-overlay">
                             <span class="project-tag">Data Analytics</span>
+                        </div>
+                        <!-- Image placeholder: Add your energy monitoring dashboard screenshot here -->
+                        <!-- <img src="images/energy-dashboard.jpg" alt="Energy Monitoring Dashboard"> -->
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; min-height: 250px; color: white; font-size: 3rem;">
+                            📊⚙️
                         </div>
                     </div>
                     <div class="project-content">
@@ -366,6 +391,11 @@
                         <div class="project-overlay">
                             <span class="project-tag">AI Exploration</span>
                         </div>
+                        <!-- Image placeholder: Add AI/ML related visual here -->
+                        <!-- <img src="images/ai-exploration.jpg" alt="AI & Machine Learning Studies"> -->
+                        <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); display: flex; align-items: center; justify-content: center; min-height: 250px; color: white; font-size: 3rem;">
+                            🤖🧠
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>AI & Machine Learning Studies</h3>
@@ -378,6 +408,93 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Media Section -->
+    <section id="gallery" class="gallery section-padding" style="background: rgba(0, 0, 0, 0.3);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Visual Showcase</span>
+                <h2 class="section-title">Workshop & Projects Gallery</h2>
+                <p class="section-subtitle">Photos, diagrams, and demos of my builds (coming soon)</p>
+            </div>
+
+            <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                
+                <!-- Gallery Item 1: Workshop Photos -->
+                <div class="gallery-item" data-aos="fade-up" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        🔧🏗️
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">Workshop Setup</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">Photos of my solar-powered workshop including tool storage, workbenches, and electrical panels</p>
+                    <!-- Replace with: <img src="images/workshop/setup-1.jpg" alt="Workshop Setup"> -->
+                </div>
+
+                <!-- Gallery Item 2: Build Progress -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        🔌⚙️
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">Build Progress</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">Step-by-step photos showing solar panel installation and wiring progression</p>
+                    <!-- Replace with: <img src="images/builds/solar-install.jpg" alt="Solar Installation"> -->
+                </div>
+
+                <!-- Gallery Item 3: System Diagrams -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        📐🗺️
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">System Diagrams</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">Wiring diagrams and system architecture for automation platforms</p>
+                    <!-- Replace with: <img src="images/diagrams/wiring-diagram.png" alt="Wiring Diagram"> -->
+                </div>
+
+                <!-- Gallery Item 4: Project Demos -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        📹▶️
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">Project Demos</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">Short videos or GIFs showing automation systems in action</p>
+                    <!-- Replace with: <video src="videos/automation-demo.mp4" controls></video> -->
+                </div>
+
+                <!-- Gallery Item 5: Equipment & Gear -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        🛠️💼
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">Tools & Equipment</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">My collection of tools, test equipment, and IoT devices</p>
+                    <!-- Replace with: <img src="images/gear/tools-collection.jpg" alt="Tools Collection"> -->
+                </div>
+
+                <!-- Gallery Item 6: Dashboard Screenshots -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 3rem;">
+                        📊💻
+                    </div>
+                    <h3 style="color: var(--light); margin-bottom: 0.5rem; font-size: 1.25rem;">Dashboard Screenshots</h3>
+                    <p style="color: var(--gray-light); font-size: 0.9rem;">Real monitoring dashboards showing energy data and automation controls</p>
+                    <!-- Replace with: <img src="images/screenshots/dashboard.png" alt="Monitoring Dashboard"> -->
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up">
+                <p style="color: var(--gray-light); font-size: 1.1rem; margin-bottom: 1rem;">
+                    📸 <strong>Want to see these projects in action?</strong>
+                </p>
+                <p style="color: var(--gray); font-size: 0.9rem; max-width: 600px; margin: 0 auto;">
+                    I'm currently curating photos and videos of my workshop, builds, and systems. 
+                    To add your media, simply replace the placeholder divs above with real images/videos 
+                    in an <code style="background: rgba(0,212,255,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary);">images/</code> or 
+                    <code style="background: rgba(0,212,255,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--primary);">videos/</code> folder.
+                </p>
             </div>
         </div>
     </section>
@@ -486,15 +603,15 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Expertise</span>
-                <h2 class="section-title">Skills & Strengths</h2>
-                <p class="section-subtitle">Dual mastery in electrical systems and emerging technology</p>
+                <h2 class="section-title">Skills & Tools</h2>
+                <p class="section-subtitle">A comprehensive blend of electrical mastery, emerging technology, and innovative problem-solving</p>
             </div>
 
             <div class="skills-container">
                 <div class="skill-category" data-aos="fade-up">
                     <div class="category-header">
                         <div class="category-icon">⚡</div>
-                        <h3>Electrical Systems</h3>
+                        <h3>Electrical Systems & Design</h3>
                     </div>
                     <div class="skills-list">
                         <div class="skill-item">
@@ -510,21 +627,21 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Troubleshooting & Diagnostics</span>
+                            <span class="skill-name">Smart Home Integration</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="98"></div>
+                                <div class="skill-progress" data-progress="92"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Solar/Renewable Energy</span>
+                            <span class="skill-name">Solar Power & Renewable Energy</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="90"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Smart Home Integration</span>
+                            <span class="skill-name">Troubleshooting & Diagnostics</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="92"></div>
+                                <div class="skill-progress" data-progress="98"></div>
                             </div>
                         </div>
                     </div>
@@ -533,15 +650,9 @@
                 <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-header">
                         <div class="category-icon">💻</div>
-                        <h3>Technology & Programming</h3>
+                        <h3>IoT & Technology</h3>
                     </div>
                     <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Python Programming</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
                         <div class="skill-item">
                             <span class="skill-name">Raspberry Pi & Arduino</span>
                             <div class="skill-bar">
@@ -549,9 +660,21 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">IoT & Home Automation</span>
+                            <span class="skill-name">Python (Basic Scripting)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">IoT Devices & Automation</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PC Building & Networking Basics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="82"></div>
                             </div>
                         </div>
                         <div class="skill-item">
@@ -560,27 +683,15 @@
                                 <div class="skill-progress" data-progress="75"></div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">System Integration</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
                     <div class="category-header">
-                        <div class="category-icon">🧠</div>
-                        <h3>Neurodivergent Strengths</h3>
+                        <div class="category-icon">🛠️</div>
+                        <h3>Technical Troubleshooting</h3>
                     </div>
                     <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Pattern Recognition</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="98"></div>
-                            </div>
-                        </div>
                         <div class="skill-item">
                             <span class="skill-name">Systems Thinking</span>
                             <div class="skill-bar">
@@ -588,21 +699,66 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Hyperfocus & Deep Work</span>
+                            <span class="skill-name">Creative Problem Solving</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
+                                <div class="skill-progress" data-progress="99"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Detail Orientation</span>
+                            <span class="skill-name">Technical Writing & Documentation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Pattern Recognition & Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="98"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Root Cause Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="94"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-header">
+                        <div class="category-icon">🤝</div>
+                        <h3>Professional & Safety</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">OSHA Safety Standards</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="96"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Unconventional Problem-Solving</span>
+                            <span class="skill-name">Client Relationship Management</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-progress="99"></div>
+                                <div class="skill-progress" data-progress="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Project Planning & Execution</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Time Management & Prioritization</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Clear Communication</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="87"></div>
                             </div>
                         </div>
                     </div>
@@ -626,22 +782,40 @@
                         <div class="contact-icon">📧</div>
                         <h3>Email</h3>
                         <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Replace with your email</p>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="contact-icon">�</div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/jovan-blango-ab670991" target="_blank" rel="noopener">Connect with me</a></p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Professional network</p>
                     </div>
                     <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="contact-icon">📱</div>
-                        <h3>Phone</h3>
-                        <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                        <div class="contact-icon">💻</div>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/izreal1990-collab" target="_blank" rel="noopener">View my code</a></p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Open source projects</p>
                     </div>
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="contact-icon">📍</div>
                         <h3>Location</h3>
                         <p>Columbus, OH</p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Open to remote work</p>
                     </div>
-                    <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="contact-icon">💼</div>
-                        <h3>LinkedIn</h3>
-                        <p><a href="https://www.linkedin.com/in/jovan-blango-ab670991" target="_blank" rel="noopener">Connect with me</a></p>
+                    <!-- Optional: Uncomment when ready to add Discord/Twitch
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">🎮</div>
+                        <h3>Discord</h3>
+                        <p><a href="https://discord.gg/yourhandle" target="_blank" rel="noopener">Join my server</a></p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Community chat</p>
                     </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="contact-icon">📺</div>
+                        <h3>Twitch</h3>
+                        <p><a href="https://twitch.tv/yourhandle" target="_blank" rel="noopener">Watch my builds</a></p>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-top: 0.5rem;">Live streams</p>
+                    </div>
+                    -->
                 </div>
 
                 <div class="contact-cta" data-aos="fade-up">

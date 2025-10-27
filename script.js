@@ -3,6 +3,19 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const scrollToTopBtn = document.getElementById('scrollToTop');
+const loadingScreen = document.getElementById('loadingScreen');
+
+// Handle loading screen
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        document.body.classList.add('loaded');
+        
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500);
+    }, 800);
+});
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
@@ -765,3 +778,222 @@ if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.
     console.log('✅ Running as PWA');
     document.body.classList.add('pwa-mode');
 }
+
+// ============================================
+// ENHANCED UI FEATURES
+// ============================================
+
+// Add ripple effect to buttons
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement('span');
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    ripple.style.width = ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+    ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+    ripple.classList.add('ripple');
+
+    const existingRipple = button.querySelector('.ripple');
+    if (existingRipple) {
+        existingRipple.remove();
+    }
+
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Apply ripple effect to all buttons
+document.querySelectorAll('.btn, .contact-card, .project-card').forEach(element => {
+    element.addEventListener('click', createRipple);
+});
+
+// Add CSS for ripple effect dynamically
+if (!document.querySelector('#ripple-styles')) {
+    const style = document.createElement('style');
+    style.id = 'ripple-styles';
+    style.textContent = `
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Parallax effect for hero section
+let ticking = false;
+
+function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.gradient-orb');
+    
+    parallaxElements.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1);
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+    });
+    
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+    }
+});
+
+// Add hover tilt effect to cards
+document.querySelectorAll('.project-card, .contact-card, .skill-category').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+// Enhanced loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    
+    // Animate elements in sequence
+    const elementsToAnimate = document.querySelectorAll('[data-aos]');
+    elementsToAnimate.forEach((el, index) => {
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, index * 50);
+    });
+});
+
+// Add custom cursor effect (optional, can be disabled)
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+const cursorDot = document.createElement('div');
+cursorDot.classList.add('custom-cursor-dot');
+document.body.appendChild(cursorDot);
+
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+});
+
+function animateCursor() {
+    const distX = mouseX - cursorX;
+    const distY = mouseY - cursorY;
+    
+    cursorX += distX * 0.1;
+    cursorY += distY * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+// Add cursor styles
+const cursorStyles = document.createElement('style');
+cursorStyles.textContent = `
+    .custom-cursor {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        transform: translate(-50%, -50%);
+    }
+    
+    .custom-cursor-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+    }
+    
+    body.loaded {
+        opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .custom-cursor,
+        .custom-cursor-dot {
+            display: none;
+        }
+    }
+`;
+document.head.appendChild(cursorStyles);
+
+// Keyboard navigation improvements
+document.addEventListener('keydown', (e) => {
+    // Press 'H' to go home
+    if (e.key === 'h' || e.key === 'H') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Press 'C' to go to contact
+    if (e.key === 'c' || e.key === 'C') {
+        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// Add visible focus indicators for accessibility
+const style = document.createElement('style');
+style.textContent = `
+    *:focus-visible {
+        outline: 3px solid var(--primary);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+    
+    .btn:focus-visible {
+        box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.3);
+    }
+`;
+document.head.appendChild(style);
+
+console.log('🚀 Enhanced UI features loaded successfully!');
