@@ -3,19 +3,6 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const scrollToTopBtn = document.getElementById('scrollToTop');
-const loadingScreen = document.getElementById('loadingScreen');
-
-// Handle loading screen
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        document.body.classList.add('loaded');
-        
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }, 800);
-});
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
