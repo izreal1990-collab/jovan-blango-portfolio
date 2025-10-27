@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jovan Blango - Electrician, Systems Thinker, and Neurodivergent Innovator bridging traditional trades with emerging technology">
+    <meta name="keywords" content="electrician, systems thinking, neurodivergent, Python, IoT, smart home, automation">
+    <meta name="author" content="Jovan Blango">
+    <title>Jovan Blango | Electrician • Systems Thinker • Innovator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">JOVAN BLANGO</span>
+                <span class="logo-subtitle">Systems Thinker</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">⚡ Available for Opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Hi, I'm Jovan</span>
+                    <span class="title-line gradient-text">Electrician • Systems Thinker</span>
+                    <span class="title-line gradient-text">Neurodivergent Innovator</span>
+                </h1>
+                <p class="hero-description">
+                    I bridge the gap between traditional trades and emerging technology. 
+                    <span class="highlight">15+ years</span> of electrical mastery meets 
+                    <span class="highlight">self-taught programming</span> and 
+                    <span class="highlight">IoT innovation</span>. 
+                    Neurodiversity isn't a limitation—it's my superpower.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="2000">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="200">0</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="0">0</span>
+                        <span class="stat-label">Safety Incidents</span>
+                    </div>
+                </div>
+                <div class="hero-social">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="social-link" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Where electrical mastery meets technological innovation</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>The Journey</h3>
+                        <p>
+                            I'm a lifelong electrician from Columbus, OH with <strong>15+ years</strong> of hands-on experience 
+                            across residential, commercial, and industrial environments. But I've never been content to stay in 
+                            one lane.
+                        </p>
+                        <p>
+                            While building a successful contracting business through word-of-mouth reputation, I taught myself 
+                            <strong>Python</strong>, built <strong>IoT systems</strong> with Raspberry Pi and Arduino, and 
+                            designed automation solutions that blend traditional electrical infrastructure with cutting-edge technology.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <h3>The Neurodivergent Advantage</h3>
+                        <p>
+                            I'm autistic, and I see it as a <strong>competitive advantage</strong>. My pattern recognition 
+                            identifies system failures before they cascade. My hyperfocus solves problems others deem "impossible." 
+                            My systems thinking sees interdependencies that conventional thinkers miss.
+                        </p>
+                        <p>
+                            Neurodiversity isn't a limitation—it's what allows me to connect dots across domains and create 
+                            solutions that wouldn't occur to someone who stays in their lane.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>Core Philosophy</h3>
+                        <blockquote class="philosophy">
+                            <p>Real-world experience beats credentials.</p>
+                            <p>Neurodiversity is a superpower.</p>
+                            <p>Every problem is a system waiting to be understood.</p>
+                        </blockquote>
+                    </div>
+
+                    <div class="about-card">
+                        <h3>What I'm Building Toward</h3>
+                        <p>
+                            I'm transitioning into roles where electrical expertise meets innovation—<strong>IoT systems 
+                            specialist</strong>, <strong>technical consulting</strong>, <strong>smart building solutions</strong>, 
+                            or environments where unconventional thinking drives real innovation.
+                        </p>
+                        <p>
+                            The future isn't trades <em>or</em> tech—it's trades <em>and</em> tech, integrated by people 
+                            who speak both languages.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">⚡</div>
+                        <h4>Zero-Incident Safety</h4>
+                        <p>15+ years, 2,000+ projects, zero safety violations. Safety isn't compliance—it's systems thinking applied to human factors.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🔧</div>
+                        <h4>Word-of-Mouth Business</h4>
+                        <p>Built profitable contracting business with zero marketing spend. Trust and reputation, delivered through excellence.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">💻</div>
+                        <h4>Self-Taught Technologist</h4>
+                        <p>Python, Raspberry Pi, Arduino, AI/ML fundamentals—learned while running full-time electrical business.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🧠</div>
+                        <h4>Neurodivergent Edge</h4>
+                        <p>Pattern recognition, hyperfocus, and systems thinking that delivers competitive advantage in problem-solving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Career Path</span>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">17 years of building, learning, and innovating</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Independent Electrical Contractor</h3>
+                            <span class="timeline-date">2008 – Present</span>
+                        </div>
+                        <p class="timeline-location">Columbus, OH</p>
+                        <ul class="timeline-list">
+                            <li>Built successful contracting business serving <strong>200+ clients</strong> through word-of-mouth reputation—zero marketing spend</li>
+                            <li>Executed complex installations: service upgrades (100A-400A), panel replacements, whole-home rewiring, commercial retrofits</li>
+                            <li>Integrated smart home systems (IoT, solar, energy-efficient tech) with legacy electrical infrastructure</li>
+                            <li>Diagnosed and resolved critical failures using logic-based troubleshooting—often solving problems others couldn't</li>
+                            <li>Maintained <strong>zero-incident safety record</strong> across 15+ years and 2,000+ projects</li>
+                        </ul>
+                        <div class="timeline-highlight">
+                            <strong>Signature Project:</strong> Designed and built off-grid solar-powered workshop 
+                            (6kW array, battery storage, Raspberry Pi monitoring system)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Freelance Tech Consultant</h3>
+                            <span class="timeline-date">2015 – Present</span>
+                        </div>
+                        <p class="timeline-location">Self-Employed</p>
+                        <ul class="timeline-list">
+                            <li>Self-taught Python programmer building automation systems, energy monitoring tools, and IoT integrations</li>
+                            <li>Designed Raspberry Pi/Arduino solutions for home automation (lighting, HVAC, security) controlling <strong>30+ devices</strong></li>
+                            <li>Reduced personal energy costs <strong>40%</strong> through custom monitoring and optimization scripts</li>
+                            <li>Advised clients on smart tech selection, network design, and system integration</li>
+                            <li>Explored AI/ML applications for predictive maintenance and workflow automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I've Built</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Real-world solutions blending electrical expertise and technology</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Electrical + IoT</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Off-Grid Solar Workshop</h3>
+                        <p>Fully self-sufficient electrical workshop with 6kW solar array, 15kWh battery storage, automatic grid failover, and custom Raspberry Pi monitoring dashboard.</p>
+                        <div class="project-tech">
+                            <span>Solar PV</span>
+                            <span>Battery Storage</span>
+                            <span>Raspberry Pi</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Energy Independent</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">$0</span>
+                                <span class="stat-label">Monthly Utility Cost</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Home Automation</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Smart Home Automation Platform</h3>
+                        <p>Custom Raspberry Pi-based ecosystem controlling 30+ devices (lighting, climate, security) with zero subscription fees and full local control.</p>
+                        <div class="project-tech">
+                            <span>Raspberry Pi</span>
+                            <span>Python</span>
+                            <span>Home Assistant</span>
+                            <span>MQTT</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">30+</span>
+                                <span class="stat-label">Connected Devices</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">40%</span>
+                                <span class="stat-label">Energy Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Data Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Energy Monitoring Dashboard</h3>
+                        <p>Real-time energy tracking system using Arduino sensors and Python analytics to optimize consumption and validate solar ROI.</p>
+                        <div class="project-tech">
+                            <span>Arduino</span>
+                            <span>Python</span>
+                            <span>Data Visualization</span>
+                            <span>SQLite</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">Real-Time</span>
+                                <span class="stat-label">Monitoring</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">$200+</span>
+                                <span class="stat-label">Annual Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">AI Exploration</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI & Machine Learning Studies</h3>
+                        <p>Self-directed exploration of AI/ML fundamentals, prompt engineering, and practical applications in predictive maintenance and automation.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>NLP</span>
+                            <span>AI Tools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Expertise</span>
+                <h2 class="section-title">Skills & Strengths</h2>
+                <p class="section-subtitle">Dual mastery in electrical systems and emerging technology</p>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="category-header">
+                        <div class="category-icon">⚡</div>
+                        <h3>Electrical Systems</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">NEC Code Compliance</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Service Upgrades & Panel Replacements</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Troubleshooting & Diagnostics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="98"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Solar/Renewable Energy</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Smart Home Integration</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-header">
+                        <div class="category-icon">💻</div>
+                        <h3>Technology & Programming</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Python Programming</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Raspberry Pi & Arduino</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">IoT & Home Automation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux & Git/GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">System Integration</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-header">
+                        <div class="category-icon">🧠</div>
+                        <h3>Neurodivergent Strengths</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Pattern Recognition</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="98"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Systems Thinking</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="97"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Hyperfocus & Deep Work</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Detail Orientation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="96"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Unconventional Problem-Solving</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="99"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Interested in collaboration, opportunities, or just want to chat? Reach out.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card" data-aos="fade-up">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Columbus, OH</p>
+                    </div>
+                    <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://linkedin.com/in/yourprofile" target="_blank">Connect with me</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-cta" data-aos="fade-up">
+                    <h3>What I'm Looking For</h3>
+                    <ul class="cta-list">
+                        <li>🔹 Smart Building / IoT Systems Specialist roles</li>
+                        <li>🔹 Technical Consulting opportunities</li>
+                        <li>🔹 Innovation & hybrid tech-trades positions</li>
+                        <li>🔹 Collaborative projects bridging electrical + tech</li>
+                        <li>🔹 Environments valuing neurodivergent thinking</li>
+                    </ul>
+                    <p class="cta-note">
+                        If you value experience over credentials, creativity over conformity, and people who get things done—let's talk.
+                    </p>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me what you're thinking..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" style="display: none;">Sending...</span>
+                        </button>
+                        <div class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>JOVAN BLANGO</h3>
+                    <p>Electrician • Systems Thinker • Neurodivergent Innovator</p>
+                </div>
+                <div class="footer-quote">
+                    <p>"This is a living portfolio. It evolves as I do."</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jovan Blango. All rights reserved.</p>
+                <p>Built with purpose, precision, and a neurodivergent edge.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

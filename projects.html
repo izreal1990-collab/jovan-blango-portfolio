@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed portfolio of Jovan Blango's projects bridging electrical expertise with technology">
+    <title>Projects | Jovan Blango</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .projects-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-base);
+            font-weight: 600;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-tech);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .project-detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-detail-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 2rem;
+            background: var(--gradient-tech);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-category {
+            padding: 0.5rem 1rem;
+            background: var(--gradient-tech);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .project-description {
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-item {
+            padding: 1rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .detail-label {
+            font-size: 0.75rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-badge {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+        
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .challenge,
+        .solution {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+        }
+        
+        .challenge {
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .solution {
+            border-left: 4px solid var(--success);
+        }
+        
+        .section-subtitle-small {
+            font-size: 1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="logo-text">JOVAN BLANGO</span>
+                    <span class="logo-subtitle">Systems Thinker</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="projects-page section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h1 class="section-title">All Projects</h1>
+                <p class="section-subtitle">Deep dives into the work that bridges electrical mastery and technological innovation</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="electrical">Electrical</button>
+                <button class="filter-btn" data-filter="iot">IoT & Automation</button>
+                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="hybrid">Hybrid Systems</button>
+            </div>
+
+            <!-- Project 1: Solar Workshop -->
+            <div class="project-detail-card" data-category="electrical hybrid">
+                <div class="project-header">
+                    <div>
+                        <h2 class="project-title">Off-Grid Solar-Powered Workshop</h2>
+                        <p style="color: var(--gray-light); font-style: italic;">2020 - 2021</p>
+                    </div>
+                    <span class="project-category">Electrical + IoT</span>
+                </div>
+                
+                <p class="project-description">
+                    Designed and constructed a completely self-sufficient electrical workshop demonstrating mastery of renewable energy systems, 
+                    electrical engineering, and IoT integration. This project showcases the practical application of solar technology, battery 
+                    storage systems, and intelligent monitoring—proving that off-grid living is not only possible but economically viable.
+                </p>
+                
+                <div class="project-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Solar Capacity</div>
+                        <div class="detail-value">6kW</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Battery Storage</div>
+                        <div class="detail-value">15kWh</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Energy Independence</div>
+                        <div class="detail-value">100%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Monthly Cost</div>
+                        <div class="detail-value">$0</div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">Solar PV Arrays</span>
+                    <span class="tech-badge">Lithium Battery Storage</span>
+                    <span class="tech-badge">Hybrid Inverter</span>
+                    <span class="tech-badge">Raspberry Pi</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">MQTT Protocol</span>
+                    <span class="tech-badge">Grid Failover</span>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3 class="section-subtitle-small">Challenge</h3>
+                        <p>Create a fully functional off-grid electrical system that could handle workshop power demands (tools, lighting, HVAC) 
+                        while maintaining grid backup capability and real-time monitoring without commercial subscription services.</p>
+                    </div>
+                    <div class="solution">
+                        <h3 class="section-subtitle-small">Solution</h3>
+                        <p>Engineered a 6kW solar array with 15kWh battery storage, automatic grid failover, and custom Raspberry Pi dashboard 
+                        providing real-time production/consumption data, weather forecasting for optimization, and predictive maintenance alerts.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="section-subtitle-small">Key Achievements</h3>
+                    <ul style="color: var(--gray-light); line-height: 1.8;">
+                        <li>Achieved 100% daytime energy independence with zero utility costs for workshop operations</li>
+                        <li>Built custom monitoring system tracking solar production, battery state, and consumption patterns</li>
+                        <li>Integrated automatic grid failover ensuring uninterrupted power during extended cloudy periods</li>
+                        <li>Created proof-of-concept for scalable renewable energy integration in residential/commercial settings</li>
+                        <li>System ROI projected at 7 years with minimal maintenance requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2: Home Automation -->
+            <div class="project-detail-card" data-category="iot software hybrid">
+                <div class="project-header">
+                    <div>
+                        <h2 class="project-title">Intelligent Home Automation Platform</h2>
+                        <p style="color: var(--gray-light); font-style: italic;">2018 - Present</p>
+                    </div>
+                    <span class="project-category">IoT & Software</span>
+                </div>
+                
+                <p class="project-description">
+                    Architected and deployed a comprehensive smart home ecosystem from scratch using Raspberry Pi and custom Python applications. 
+                    This system demonstrates full local control without subscription services, integrating disparate IoT protocols into a unified, 
+                    intelligent platform that learns from usage patterns and optimizes for energy efficiency.
+                </p>
+                
+                <div class="project-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Connected Devices</div>
+                        <div class="detail-value">30+</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Energy Reduction</div>
+                        <div class="detail-value">40%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">HVAC Savings</div>
+                        <div class="detail-value">35%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Monthly Fees</div>
+                        <div class="detail-value">$0</div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">Raspberry Pi 4</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Home Assistant</span>
+                    <span class="tech-badge">MQTT</span>
+                    <span class="tech-badge">Zigbee</span>
+                    <span class="tech-badge">Z-Wave</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">SQLite</span>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3 class="section-subtitle-small">Challenge</h3>
+                        <p>Commercial smart home systems require expensive monthly subscriptions ($50-100/month), rely on cloud services 
+                        (privacy concerns), and often don't integrate well across different brands and protocols.</p>
+                    </div>
+                    <div class="solution">
+                        <h3 class="section-subtitle-small">Solution</h3>
+                        <p>Built custom Raspberry Pi-based platform with Python middleware integrating Zigbee, Z-Wave, and WiFi protocols. 
+                        Full local control, occupancy-based automation, machine learning for scheduling optimization, and zero recurring costs.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="section-subtitle-small">System Features</h3>
+                    <ul style="color: var(--gray-light); line-height: 1.8;">
+                        <li><strong>Intelligent Lighting:</strong> Occupancy detection, circadian rhythm matching, automatic adjustments based on natural light</li>
+                        <li><strong>Climate Optimization:</strong> ML-based HVAC scheduling using weather forecasts and occupancy patterns—35% cost reduction</li>
+                        <li><strong>Security Integration:</strong> Camera feeds, door sensors, automated alerts without monthly monitoring fees</li>
+                        <li><strong>Voice Control:</strong> Local voice commands via Home Assistant integration (no cloud dependency)</li>
+                        <li><strong>Energy Monitoring:</strong> Real-time consumption tracking identifying waste and optimizing usage</li>
+                        <li><strong>Remote Access:</strong> Secure encrypted tunnel for remote management without exposing to internet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3: Energy Monitoring -->
+            <div class="project-detail-card" data-category="iot software">
+                <div class="project-header">
+                    <div>
+                        <h2 class="project-title">Real-Time Energy Monitoring Dashboard</h2>
+                        <p style="color: var(--gray-light); font-style: italic;">2019</p>
+                    </div>
+                    <span class="project-category">Data Analytics</span>
+                </div>
+                
+                <p class="project-description">
+                    Developed comprehensive energy tracking system providing granular visibility into electrical consumption across individual 
+                    circuits. This data-driven approach enables precise identification of waste, validation of efficiency improvements, and 
+                    informed decision-making for future upgrades.
+                </p>
+                
+                <div class="project-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Monitoring Type</div>
+                        <div class="detail-value">Real-Time</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Annual Savings</div>
+                        <div class="detail-value">$200+</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Data Points/Day</div>
+                        <div class="detail-value">86,400+</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">ROI Period</div>
+                        <div class="detail-value">6 months</div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">Arduino ESP32</span>
+                    <span class="tech-badge">Current Sensors</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">SQLite</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Chart.js</span>
+                    <span class="tech-badge">Data Visualization</span>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3 class="section-subtitle-small">Challenge</h3>
+                        <p>Most energy monitoring solutions only track total household consumption. Need granular per-circuit data to identify 
+                        specific sources of waste and validate the impact of efficiency improvements.</p>
+                    </div>
+                    <div class="solution">
+                        <h3 class="section-subtitle-small">Solution</h3>
+                        <p>Installed Arduino-based current sensors on main panel circuits with Python data collection pipeline. Web dashboard 
+                        visualizes consumption patterns, identifies anomalies, and provides actionable insights for optimization.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="section-subtitle-small">Key Insights Discovered</h3>
+                    <ul style="color: var(--gray-light); line-height: 1.8;">
+                        <li>Identified $200+/year in phantom loads from devices in standby mode</li>
+                        <li>Optimized high-draw appliance usage to off-peak hours (20% cost reduction on those circuits)</li>
+                        <li>Validated solar ROI projections with actual production vs. consumption data</li>
+                        <li>Discovered inefficient HVAC cycling patterns enabling targeted fixes</li>
+                        <li>System now offered to consulting clients for pre/post energy audit validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 4: AI Exploration -->
+            <div class="project-detail-card" data-category="software">
+                <div class="project-header">
+                    <div>
+                        <h2 class="project-title">AI & Machine Learning Research</h2>
+                        <p style="color: var(--gray-light); font-style: italic;">2022 - Present</p>
+                    </div>
+                    <span class="project-category">Emerging Tech</span>
+                </div>
+                
+                <p class="project-description">
+                    Self-directed deep-dive into artificial intelligence, machine learning fundamentals, and natural language processing. 
+                    Exploring practical applications in predictive maintenance, workflow automation, and intelligent system design—bridging 
+                    theoretical knowledge with real-world implementation.
+                </p>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">NLP</span>
+                    <span class="tech-badge">GPT Models</span>
+                    <span class="tech-badge">Prompt Engineering</span>
+                    <span class="tech-badge">Data Science</span>
+                </div>
+                
+                <div>
+                    <h3 class="section-subtitle-small">Learning Focus Areas</h3>
+                    <ul style="color: var(--gray-light); line-height: 1.8;">
+                        <li><strong>Predictive Maintenance:</strong> Using ML to predict electrical system failures before they occur</li>
+                        <li><strong>Pattern Recognition:</strong> Applying AI to identify optimization opportunities in energy consumption</li>
+                        <li><strong>Natural Language Processing:</strong> Exploring conversational interfaces for technical documentation</li>
+                        <li><strong>Workflow Automation:</strong> AI-assisted code generation and technical writing tools</li>
+                        <li><strong>Computer Vision:</strong> Investigating automated electrical inspection systems</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="section-subtitle-small">Practical Applications</h3>
+                    <ul style="color: var(--gray-light); line-height: 1.8;">
+                        <li>Experimenting with AI-powered electrical design automation</li>
+                        <li>Building prompt engineering workflows for technical documentation generation</li>
+                        <li>Researching fault detection algorithms for smart home systems</li>
+                        <li>Exploring integration of AI with IoT sensor data for predictive insights</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>JOVAN BLANGO</h3>
+                    <p>Electrician • Systems Thinker • Neurodivergent Innovator</p>
+                </div>
+                <div class="footer-quote">
+                    <p>"This is a living portfolio. It evolves as I do."</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#experience">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jovan Blango. All rights reserved.</p>
+                <p>Built with purpose, precision, and a neurodivergent edge.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-detail-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
