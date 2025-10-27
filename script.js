@@ -37,6 +37,24 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // Animated counter for stats
+// Add 3D tilt effect to cards for high-tech look
+document.querySelectorAll('.project-card, .contact-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 8;
+        const rotateY = ((centerX - x) / centerX) * 8;
+        card.style.setProperty('--card-tilt-x', `${rotateX}deg`);
+        card.style.setProperty('--card-tilt-y', `${rotateY}deg`);
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--card-tilt-x', '0deg');
+        card.style.setProperty('--card-tilt-y', '0deg');
+    });
+});
 const animateCounter = (element, target, duration = 2000) => {
     const start = 0;
     const increment = target / (duration / 16);

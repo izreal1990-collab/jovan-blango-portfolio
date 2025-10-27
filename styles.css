@@ -743,12 +743,14 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition-base);
+        will-change: transform, box-shadow;
+        box-shadow: 0 4px 24px rgba(0,212,255,0.10);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 12px 48px rgba(0,212,255,0.25), 0 0 40px rgba(0,212,255,0.15);
+    transform: perspective(800px) rotateX(var(--card-tilt-x,0deg)) rotateY(var(--card-tilt-y,0deg)) scale(1.03);
     border-color: var(--primary);
-    box-shadow: var(--shadow-glow);
 }
 
 .project-image {
@@ -922,12 +924,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     transition: var(--transition-base);
+        will-change: transform, box-shadow;
+        box-shadow: 0 4px 24px rgba(0,212,255,0.10);
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0,212,255,0.25), 0 0 40px rgba(0,212,255,0.15);
+    transform: perspective(800px) rotateX(var(--card-tilt-x,0deg)) rotateY(var(--card-tilt-y,0deg)) scale(1.03);
     border-color: var(--primary);
-    box-shadow: var(--shadow-glow);
 }
 
 .contact-icon {
