@@ -1,3 +1,60 @@
+// Confetti celebration on contact form submit
+document.addEventListener('DOMContentLoaded', function() {
+    var contactForm = document.querySelector('.contact-form');
+    var confettiCanvas = document.getElementById('confetti-canvas');
+    if (contactForm && confettiCanvas) {
+        contactForm.addEventListener('submit', function(e) {
+            // Only trigger confetti if form is valid
+            if (contactForm.checkValidity()) {
+                showConfetti();
+            }
+        });
+        function showConfetti() {
+            confettiCanvas.style.display = 'block';
+            launchConfetti(confettiCanvas);
+            setTimeout(function() {
+                confettiCanvas.style.display = 'none';
+            }, 1800);
+        }
+        function launchConfetti(canvas) {
+            var ctx = canvas.getContext('2d');
+            var W = window.innerWidth;
+            var H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+            var particles = [];
+            var colors = ['#f5576c','#4facfe','#fa709a','#fee140','#667eea','#764ba2','#f093fb','#00f2fe'];
+            for (var i = 0; i < 60; i++) {
+                particles.push({
+                    x: Math.random() * W,
+                    y: Math.random() * H/2,
+                    r: Math.random() * 8 + 4,
+                    d: Math.random() * 60,
+                    color: colors[Math.floor(Math.random()*colors.length)],
+                    tilt: Math.random()*10-5
+                });
+            }
+            var angle = 0;
+            var confettiAnim = setInterval(function() {
+                ctx.clearRect(0,0,W,H);
+                angle += 0.02;
+                for (var i = 0; i < particles.length; i++) {
+                    var p = particles[i];
+                    p.y += Math.cos(angle+p.d) + 2 + p.r/2;
+                    p.x += Math.sin(angle) * 2;
+                    ctx.beginPath();
+                    ctx.ellipse(p.x, p.y, p.r, p.r/2, p.tilt, 0, 2*Math.PI);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                }
+            }, 16);
+            setTimeout(function(){
+                clearInterval(confettiAnim);
+                ctx.clearRect(0,0,W,H);
+            }, 1500);
+        }
+    }
+});
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
