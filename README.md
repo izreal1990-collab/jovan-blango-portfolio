@@ -1,12 +1,22 @@
 # Jovan Blango - Personal Portfolio Website
 
-**Electrician | Systems Thinker | Neurodivergent Innovator**
+**Electrician | Systems Thinker | AI Innovator**
 
-A modern, ultra-high-definition personal portfolio website showcasing the intersection of electrical mastery and technological innovation.
+A modern, ultra-high-definition personal portfolio website showcasing the intersection of electrical mastery and technological innovation, featuring groundbreaking dual-AI collaboration systems.
 
 ---
 
-## 🚀 Features
+## 🚀 Featured Work
+
+### Trill-AI: Dual-AI Collaboration System
+Revolutionary AI architecture where specialized transformer and language models collaborate, debug each other, and evolve together. Features enterprise-grade security with military-grade encryption, zero-trust architecture, and cloud-native deployment. Currently in active development showcasing advanced AI orchestration and system integration capabilities.
+
+### Traditional Electrical Mastery
+12+ years of large-scale commercial electrical work including 3000A service installations, emergency power systems, fire safety, and smart building integration—bridging traditional trades with emerging technology.
+
+---
+
+## 🌟 Portfolio Features
 
 ### Visual Excellence
 - **Glassmorphism UI** - Frosted glass effects with backdrop blur
@@ -39,8 +49,8 @@ A modern, ultra-high-definition personal portfolio website showcasing the inters
 
 ```
 website/
-├── index.html          # Main homepage
-├── projects.html       # Detailed projects page
+├── index.html          # Main homepage with dual-AI project showcase
+├── projects.html       # Detailed projects page featuring Trill-AI
 ├── styles.css          # All styles and animations
 ├── script.js           # Interactive functionality
 └── README.md          # This file
@@ -124,20 +134,10 @@ Then open `http://localhost:8000` in your browser.
 **Contact Details** (`index.html` and `projects.html`)
 ```html
 <!-- Update these placeholders -->
-📧 [Your Email]        → your.email@example.com
-📱 [Your Phone]        → (123) 456-7890
-💼 [LinkedIn Profile]  → https://linkedin.com/in/yourprofile
-🔧 [GitHub/Portfolio]  → https://github.com/yourusername
-```
-
-**Email Link** (Contact section)
-```html
-<a href="mailto:your.email@example.com">your.email@example.com</a>
-```
-
-**Phone Link** (Contact section)
-```html
-<a href="tel:+1234567890">(123) 456-7890</a>
+📧 jovan.blango@gmail.com
+📍 Columbus, OH
+💼 LinkedIn: linkedin.com/in/jovan-blango-ab670991
+🔧 GitHub: github.com/izreal1990-collab
 ```
 
 ### Add New Projects
@@ -175,28 +175,6 @@ Edit `styles.css` root variables:
 }
 ```
 
-### Add New Sections
-
-Follow this pattern in `index.html`:
-
-```html
-<section id="your-section" class="your-section section-padding">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Section Label</span>
-            <h2 class="section-title">Section Title</h2>
-            <p class="section-subtitle">Section description</p>
-        </div>
-        <!-- Your content here -->
-    </div>
-</section>
-```
-
-Don't forget to add to navigation:
-```html
-<li><a href="#your-section" class="nav-link">Your Section</a></li>
-```
-
 ---
 
 ## 🌐 Deployment Options
@@ -222,15 +200,6 @@ Don't forget to add to navigation:
 2. Import from GitHub or upload directly
 3. Automatic deployments on every push
 4. Great performance and analytics
-
-### Option 4: Traditional Web Hosting
-
-Upload files via FTP to any web hosting provider:
-- Bluehost
-- HostGator
-- SiteGround
-- GoDaddy
-- Any hosting with HTML support
 
 ---
 
@@ -277,25 +246,6 @@ Edit the Skills section in `index.html`:
 
 Edit the Timeline section in `index.html` to add new roles or update existing ones.
 
-### Adding Blog Posts (Future)
-
-Create a new `blog.html` page following the structure of `projects.html`.
-
-### Analytics Integration
-
-Add before closing `</body>` tag:
-
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'YOUR-GA-ID');
-</script>
-```
-
 ---
 
 ## 🎁 Easter Eggs
@@ -317,28 +267,6 @@ Add before closing `</body>` tag:
 
 ---
 
-## 🐛 Troubleshooting
-
-**Animations not working?**
-- Check browser compatibility (try latest Chrome)
-- Disable browser extensions that block JavaScript
-- Clear cache and hard reload (Ctrl + Shift + R)
-
-**Mobile menu not closing?**
-- Ensure JavaScript is enabled
-- Check browser console for errors
-
-**Styles not loading?**
-- Verify `styles.css` path is correct
-- Check for CSS syntax errors
-- Ensure file permissions are correct (if on server)
-
-**Fonts not loading?**
-- Check internet connection (Google Fonts requires network)
-- Verify font URLs in `<head>` section
-
----
-
 ## 💡 Future Enhancements
 
 Ideas for expanding the website:
@@ -351,8 +279,8 @@ Ideas for expanding the website:
 - [ ] Create downloadable resume PDF
 - [ ] Add GitHub activity feed
 - [ ] Implement search functionality
-- [ ] Add video showcases
-- [ ] Create interactive portfolio items
+- [ ] Add video showcases for AI projects
+- [ ] Create interactive AI model demonstrations
 
 ---
 
@@ -365,9 +293,9 @@ This is a personal portfolio website. Feel free to use the structure and code as
 ## 📞 Support
 
 Questions about customization or deployment?
-- Email: [your.email@example.com]
-- LinkedIn: [Your Profile]
-- GitHub Issues: [If you create a repo]
+- Email: jovan.blango@gmail.com
+- LinkedIn: linkedin.com/in/jovan-blango-ab670991
+- GitHub: github.com/izreal1990-collab
 
 ---
 
@@ -376,7 +304,7 @@ Questions about customization or deployment?
 **Built by:** Jovan Blango  
 **Design Philosophy:** Clean, modern, and authentic  
 **Fonts:** Google Fonts (Inter & JetBrains Mono)  
-**Inspiration:** Neurodivergent thinking, systems design, and relentless curiosity
+**Inspiration:** Neurodivergent thinking, systems design, and AI collaboration
 
 ---
 
@@ -384,6 +312,6 @@ Questions about customization or deployment?
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** October 27, 2025  
-**Status:** Production Ready ✅
+**Version:** 2.0.0  
+**Last Updated:** October 29, 2025  
+**Status:** Production Ready ✅ • Now featuring AI innovation showcase
