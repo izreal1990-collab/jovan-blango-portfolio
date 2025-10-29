@@ -147,6 +147,11 @@ body {
     overflow-x: hidden;
 }
 
+section {
+    position: relative;
+    z-index: 10;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -329,9 +334,28 @@ body {
     66% { transform: translate(-100px, 100px) scale(0.9); }
 }
 
+/* Wave Divider */
+.wave-divider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+
+.wave-divider .shape-fill {
+    fill: var(--dark);
+}
+
 .hero-container {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 .hero-content {
@@ -1344,6 +1368,7 @@ body.loaded::before {
     }
 }
 
+
 /* Animation on Scroll */
 [data-aos] {
     opacity: 0;
@@ -1358,3 +1383,4 @@ body.loaded::before {
 [data-aos="fade-up"] {
     transform: translateY(30px);
 }
+

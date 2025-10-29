@@ -14,6 +14,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
+    
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -114,8 +115,12 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section-padding">
-        <div class="container">
+    <section id="about" class="about section-padding" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; z-index: 0;">
+            <div class="gradient-orb" style="width: 500px; height: 500px; background: var(--gradient-electric); top: -200px; right: -200px; animation-delay: 3s;"></div>
+            <div class="gradient-orb" style="width: 350px; height: 350px; background: var(--gradient-primary); bottom: -100px; left: 10%; animation-delay: 8s;"></div>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
             <div class="section-header">
                 <span class="section-label">Who I Am</span>
                 <h2 class="section-title">About Me</h2>
@@ -253,17 +258,25 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
+    <section id="projects" class="projects" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; z-index: 0;">
+            <div class="gradient-orb" style="width: 450px; height: 450px; background: var(--gradient-tech); top: 10%; left: -150px; animation-delay: 5s;"></div>
+            <div class="gradient-orb" style="width: 400px; height: 400px; background: var(--gradient-secondary); bottom: -100px; right: -100px; animation-delay: 10s;"></div>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-list">
                 <div class="project-card animated-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 180px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; border-radius: 12px; margin-bottom: 1rem;">�⚡</div>
+                    <div class="project-image">
+                        <img src="electrical-project.jpg" alt="Multi-Family Electrical Systems Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
                     <h3 class="project-title">Multi-Family Electrical Systems <span class="emoji-badge" style="font-size:1.3rem;">🏗️</span></h3>
                     <p class="project-description">Led complete electrical installations for multi-family residential complexes—3000A service gear, distribution systems, fire alarm, low voltage, and emergency power. Coordinated with general contractors, read complex blueprints, and ensured full NEC compliance.</p>
                 </div>
                 <div class="project-card animated-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); min-height: 180px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; border-radius: 12px; margin-bottom: 1rem;">�🔌</div>
+                    <div class="project-image">
+                        <img src="emergency-power.jpg" alt="Emergency Power & Life Safety Systems" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
                     <h3 class="project-title">Emergency Power & Life Safety <span class="emoji-badge" style="font-size:1.3rem;">⚡</span></h3>
                     <p class="project-description">Specialized installations including backup generators, ATS (Automatic Transfer Switches), fire pumps, and integrated fire alarm systems. Ensuring critical infrastructure reliability and comprehensive life safety compliance across commercial projects.</p>
                 </div>
@@ -463,8 +476,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
+    <section id="contact" class="contact" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; z-index: 0;">
+            <div class="gradient-orb" style="width: 500px; height: 500px; background: var(--gradient-primary); top: -150px; left: 50%; animation-delay: 2s;"></div>
+            <div class="gradient-orb" style="width: 300px; height: 300px; background: var(--gradient-tech); bottom: -80px; right: 20%; animation-delay: 9s;"></div>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
             <h2 class="section-title">Contact</h2>
             <div class="contact-info">
                 <p><strong>Email:</strong> jovan.blango@gmail.com</p>

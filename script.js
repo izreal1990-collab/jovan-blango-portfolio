@@ -1,5 +1,11 @@
-// Confetti celebration on contact form submit
+// ============================================
+// DOM Ready - All initialization code
+// ============================================
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // Confetti celebration on contact form submit
+    // ============================================
     var contactForm = document.querySelector('.contact-form');
     var confettiCanvas = document.getElementById('confetti-canvas');
     if (contactForm && confettiCanvas) {
